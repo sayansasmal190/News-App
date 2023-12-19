@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--NAVIAGTION BAR CREATING REGION STARTS-->
+
+          <nav>
+                  <div class="main-nav container flex">   <!--container and flex are utility clases of css-->                                              <!--div for opening the main navigation bar-->
+
+<!--item 1-->             <a href="#"  onclick="reload()" class="company-logo">  <!--a : anchor tag-->  <!--on clicking on the logo the page will reload and comes to home page-->
+                                <img src="./assets/logo4.png" alt="">        <!--logo given-->
+                             </a>
+                          
+
+ 
+ <!--item 2-->               <div class="nav-links">                                        <!--div for navigation links on the navigation bar-->
+                                <ul class="flex">        <!--flex is utility class of css-->
+                                      <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>                   <!--on clicking on IPL , Finance or Politics onNavItemClick function will be called with ipl or finance or politics as id names or search query-->
+                                      <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>    <!--shit+alt+up/down button for duplicating lines-->
+                                      <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                                </ul>
+                             </div>
+
+
+
+ <!--item 3-->              <div class="search-bar flex">                                          <!--div for providing search bar(place to search anything)-->
+                                  <input type="text" class="news-input" id="search-text" placeholder="e.g Science">
+                                  <button class="search-button" id="search-button">Search</button>
+                             </div>
+                  </div>
+
+
+          </nav>
+
+
+    <!--NAVIAGTION BAR CREATING REGION ENDS-->
+
+
+
+
+
+    <!--MAIN CREATING REGION STARTS-->
+
+
+
+
+
+    <main>
+
+            <div class="cards-container container flex" id="cards-container">                <!--A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.-->
+
+                    
+
+                    
+
+
+
+
+                  
+
+            </div>
+
+
+
+    </main>
+
+
+
+
+  <!--we use template coz we need to call multiple APIs to show many cards-->
+   <!--cards will not be visible while it is inside template-->
+  <template id="template-news-card">
+                           <div class="card">
+                           
+        <!--1st item of card-->      <div class="card-header">
+                                           <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">            <!--"https://via.placeholder.com/400x200" is a website thats helps to bring placeholder images-->
+                                     </div>
+        
+        
+        <!--2nd item of card-->      <div class="card-content">
+                                             <h3 id="news-title">This is the Title</h3>
+                                             <h6 class="news-source" id="news-source">End gadget 26/08/2023</h6>
+                                             <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ex quas assumenda deleniti? Similique non quos, atque odit sunt rem!</p>
+        
+                                    </div>
+                            </div>
+
+  </template>
+
+
+
+
+
+
+         <script src="script.js"></script>
+
+</body>
+</html>

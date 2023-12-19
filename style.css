@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto:ital,wght@1,500&display=swap');
+
+
+*{                           /*universal selector*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+       
+         /*these are all global variables which we use anywhere*/
+        --primary-text-color: #183b56 ;
+        --secondary-text-color: #577592;
+        --accent-color:#2294ed ;                      
+        --accent-color-dark: #1d69a3;
+                                                         
+                                         
+}
+
+
+
+body{
+     font-family: "Poppins" , "sans-serif";
+     color: var(--primary-text-color);
+}
+
+p{
+    font-family: "Roboto" , "sans-serif";
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;                            /*line-height: normal (default):
+                                                      This is a paragraph with a standard line-height.
+                                                      The standard line height in most browsers is about 110% to 120%.
+
+                                                      line-height: 1.4rem (recommended):
+                                                      This is a paragraph with the recommended line-height.
+
+                                                      The line height is here set to 1.4. This is a unitless value;
+
+                                                      meaning that the line height will be relative to the font size.*/
+}
+
+
+
+/*NAVIAGTION BAR CSS STARTS*/
+
+a{
+    text-decoration: none;        /*underlines will be removed from every anchor tags*/
+
+}
+
+ul{
+    list-style: none;              /*bullet points will be removed*/
+}
+
+
+  /*utility classes--> .flex , .container*/                 
+.flex{
+     display: flex;                                                     /*Utility classes are self-descriptive, single-purpose CSS classes:
+
+                                                                .flex {
+                                                                  display: flex;
+                                                                }
+     
+                                                                Developers use these functional classes to build without writing additional CSS because if the style is in the library, you can use it over and over and over…*/
+
+     
+     align-items: center;               
+
+}
+
+.container{
+
+    max-width: 1180px;
+    margin-inline:auto ;                /*auto means the item will be evenly align from left to right coming in center*/
+    overflow: hidden;               /*hidden: The overflow is clipped, and the rest of the content will be invisible
+                                       The overflow property specifies what should happen if content overflows an element's box.
+                                      This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area.
+                                     */
+}
+
+nav{                     /*the whole navigation bar css property*/
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;        /*providing shadow beneath the navigation bar with height of 4px and of partucluar color*/
+    position: fixed;
+    top: 0;
+    z-index: 90;        /*The z-index property specifies the stack order of an element.
+
+                          An element with greater stack order is always in front of an element with a lower stack order.*/
+    left: 0;
+    right:0;
+
+}
+
+.main-nav{
+    justify-content:space-between;           /*there re 3 items inside main-nav and Items will have space between them*/
+    padding: 8px 0;                         /*8px is padding from top and 0px is padding from left , right*/
+}
+
+.company-logo img{
+
+   width: 65px;
+}
+
+
+.nav-links ul{
+    gap:16px;          /*setting gap between IPL  ,Finance ,Politics*/
+}
+
+.hover-link{
+    cursor:pointer;    /*on taking the mouse over the any list the mouse will change to pointer*/
+}
+
+.hover-link:hover{            /*on taking the mouse over any items the colour of the item will change*/
+    color: var(--secondary-text-color);
+}
+.hover-link:active{               /*on clicking any of the items the letters will turn red*/
+    color: red;
+}
+
+.nav-item.active{                  /*on clicking or selecting any nav item such as IPL or Finanace or Politics which is currently active, it will turn into accent-color while page related to nav item being open */
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+.search-bar{
+     height: 32px;
+     gap:8px;
+}
+.news-input{
+    font-family: "Roboto" , "sans-serif";
+      width: 200px;       /*width of searching area box*/
+      height: 100%;         /*height of the searching area box*/
+      padding: 12px 8px;    /* "e.g Science" shifts right on 8px padding  *//*12px is top button padding and 8px is left side padding*/
+      border-radius: 4px;
+      border: 2px solid #bbd0e2;
+}
+
+.search-button{
+    font-family: "Roboto" , "sans-serif";
+    background-color: var(--accent-color);
+    color: white;    /*text color is white*/
+    padding: 8px 24px;    /*padding from top/button and lef/right */
+    border: none;
+    border-radius: 4px ;
+    cursor: pointer;
+}
+
+.search-button:hover{
+    background-color: var(--accent-color-dark);
+}
+
+
+/*NAVIAGTION BAR CSS ENDS*/
+
+
+
+
+
+
+
+
+
+
+
+/*MAIN PORTION CSS PROPERTIES STARTS*/
+
+main{
+    padding-block: 20px;   /*padding from top*/
+    margin-top: 80px;     /*80px gap from top of the screen*/
+}
+
+.cards-container{
+    justify-content: space-between;
+    flex-wrap: wrap;         /* prefer this website---> https://www.w3schools.com/cssref/playdemo.php?filename=playcss_flex-wrap&preval=wrap */ /*The flex-wrap property specifies whether the flexible items should wrap or not*/
+    row-gap: 20px;    /*suppose 1st row contains 3 cards , then after 20px gap from the first row 2nd row will start*/ /*prefer this website----->> https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap*/
+    align-items:start; /*VISIT this website---> https://www.w3schools.com/cssref/tryit.php?filename=trycss3_align-items */
+}
+
+.card{
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;   /*if I dont mention overflow hidden then the image is getting out of the box*/
+
+    transition: all 0.3s ease;  /*on taking the cursor over the card , the card wil move up by -2px and will take 0.3s to move up*/ /*related to transform property under .card:hover*/
+}
+
+.card:hover{
+    
+        box-shadow: 1px 1px 8px #d4ecff;
+        background-color: #f9fdff;
+        transform: translateY(-2px);    /*on taking the cursor over the card ,  the card will move up(Y axis) by -2px */
+}
+
+.card-header img{
+    width: 100%;
+    height: 180px;
+    object-fit:cover; /*cover: the image will fill the height and width of its box, once again maintaining its aspect ratio but often cropping the image in the process.*/ 
+    /*The object-fit property defines how an element responds to the height and width of its content box. It’s intended for images, videos and other embeddable media formats in conjunction with the object-position property. Used by itself, object-fit lets us crop an inline image by giving us fine-grained control over how it squishes and stretches inside its box.*/
+}
+
+
+.card-content{
+    padding: 12px; /*from all sides 12px padding will be provided*/
+}
+
+.news-source{
+    margin-block: 12px ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RESPOSNSIVE CSS PROPERTIES*/
+
+
+
+@media only screen and (max-width:700px){
+
+
+    nav{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+    
+    .main-nav{
+        gap: 6px;
+        justify-content:space-between;           /*there re 3 items inside main-nav and Items will have space between them*/
+        padding: 5px 3px;                         /*8px is padding from top and 0px is padding from left , right*/
+    }
+    
+    .news-input{
+          font-family: "Roboto" , "sans-serif";
+          width: 90px;       /*width of searching area box*/
+          height: 70%;         /*height of the searching area box*/
+          padding: 12px 8px;    /* "e.g Science" shifts right on 8px padding  *//*12px is top button padding and 8px is left side padding*/
+          border-radius: 8px;
+          border: 2px solid #bbd0e2;
+    }
+
+
+    
+    .cards-container{
+        padding-left: 4rem;
+        padding-right: 4rem;
+        justify-content: space-between;
+        display: flex;         /* prefer this website---> https://www.w3schools.com/cssref/playdemo.php?filename=playcss_flex-wrap&preval=wrap */ /*The flex-wrap property specifies whether the flexible items should wrap or not*/
+        row-gap: 27px;    /*suppose 1st row contains 3 cards , then after 20px gap from the first row 2nd row will start*/ /*prefer this website----->> https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap*/
+        align-items:start; /*VISIT this website---> https://www.w3schools.com/cssref/tryit.php?filename=trycss3_align-items */
+    }
+
+
+    
+
+
+
+
+
+
+
+    .card{
+        width: 360px;
+        min-height: 400px;
+        box-shadow: 8px 0 25px #c6e3fa;
+        border-radius: 9px;
+        cursor: pointer;
+        background-color: #fff;
+        overflow: hidden;   /*if I dont mention overflow hidden then the image is getting out of the box*/
+    
+        transition: all 0.5s ease;  /*on taking the cursor over the card , the card wil move up by -2px and will take 0.3s to move up*/ /*related to transform property under .card:hover*/
+    }
+
+    .card:hover{
+    
+        box-shadow: 1px 1px 8px #d4ecff;
+        background-color: #f9fdff;
+        transform: translateY(-6px);    /*on taking the cursor over the card ,  the card will move up(Y axis) by -2px */
+}
+
+
+
+
+
+
+
+
+.search-button{
+
+    padding: 3px 11px; 
+    border-radius: 13px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
